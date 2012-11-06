@@ -1,0 +1,65 @@
+/*.helloworld-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(10,10,10,0.7);
+    border-radius: 5px;
+    padding: .5em;
+}*/
+
+.gn-panel-box {
+	background-color: transparent;
+}
+
+.gn-mailbox .label {
+	font-size: 15pt;
+	font-weight: 100;
+	color: rgba(255, 255, 255, 1);
+	padding: 0 0 7px; 
+}
+
+.gn_item {
+	padding-top: 0;
+}
+
+.gn_item .item {
+	border: 1px solid #404040;
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+	/*padding: 0 0 0.5em 0;*/
+}
+
+.gn_item .item .header-layout {
+	/*padding: 0.5em 0 0 0;*/
+	margin-bottom: -20px;
+	line-height: 0;
+}
+
+.gn_item .item .date {
+	font-size: 10pt;
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.gn_item .item .time {
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 0 1em;
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.gn_item .item .from {
+	font-size: 10pt;
+	padding-right: 1em;
+	/*spacing: 1em;*/
+}
+
+.gn_item .item .addr {
+	font-size: 10pt;
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.gn_item .item .content {
+	font-size: 10pt;
+	padding-left: 1em;
+}
