@@ -388,13 +388,15 @@ GmailButton.prototype = {
     _init: function() {
 		try {
         PanelMenu.Button.prototype._init.call(this, 0.0);
-        this._label = new St.Bin({ style_class: 'panel-button', reactive: true,
+        this._label = new St.Bin({ 
+        				  // style_class: 'panel-button',
+        				  reactive: true,
                           can_focus: true,
                           x_fill:true,
                           y_fill: false,
                           track_hover:true
                           });
-        this._box = new St.BoxLayout({style_class: 'gn-panel-box'});
+        this._box = new St.BoxLayout({style_class: 'gn_panel-box'});
 
         this._icon_gray=Clutter.Texture.new_from_file(extensionPath+"/icons/gmaillogo-notifier-gray.svg");
 		this._icon_red=Clutter.Texture.new_from_file(extensionPath+"/icons/gmaillogo-notifier-red.svg");
@@ -645,7 +647,7 @@ GmailButton.prototype.setContent=function (content,add,mailbox) {
 			Main.panel.menuManager.removeMenu(this.menu);
 			this.menu.destroy();
 			this.menu = new PopupMenu.PopupMenu(this.actor, 0.0, St.Side.TOP);
-			this.menu.actor.add_style_class_name('panel-menu');
+			this.menu.actor.add_style_class_name('gn_panel-menu');
 			this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
 			this.menu.actor.connect('key-press-event', Lang.bind(this, this._onMenuKeyPress));
 			Main.uiGroup.add_actor(this.menu.actor);
@@ -715,7 +717,8 @@ GmailMenuItem.prototype = {
 		try {
         PopupMenu.PopupBaseMenuItem.prototype._init.call(this, params);
 
-        this.label= new St.BoxLayout({ vertical: false, style_class: 'item' });
+        this.label= new St.BoxLayout({ vertical: false, style_class: 'item'});
+
         let layout = new St.BoxLayout({ vertical: true, style_class: 'layout'});
         let header_layout = new St.BoxLayout({ vertical: false, style_class: 'header-layout' });
 
@@ -810,7 +813,7 @@ MailboxMenuItem.prototype = {
     _init: function (text, params) {
 		try {
         PopupMenu.PopupBaseMenuItem.prototype._init.call(this, params);
-        this.label= new St.BoxLayout({ vertical: false, style_class: 'gn-mailbox' });
+        this.label= new St.BoxLayout({ vertical: false, style_class: 'gn_mailbox' });
         let mailbox = new St.Label({ text: text, style_class: 'label'});
         this.label.add(mailbox);
         this.addActor(this.label);
